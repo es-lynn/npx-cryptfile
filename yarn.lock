@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@aelesia/commons@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@aelesia/commons/-/commons-0.0.3.tgz#24f566eef829ff89bea3a790724b4b008e08613c"
+  integrity sha512-H16sSWQfMWeA3sfXZ0yh+652FM5OT9QdOeCHgPK5YaHXAwq8mL0lh10HU4OoaHS4Uv948yfRgRMSfM+ACTHDeA==
+  dependencies:
+    dayjs "^1.8.18"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
@@ -947,6 +954,11 @@ data-urls@^1.0.0:
     abab "^2.0.0"
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
+
+dayjs@^1.8.18:
+  version "1.8.19"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.19.tgz#5117dc390d8f8e586d53891dbff3fa308f51abfe"
+  integrity sha512-7kqOoj3oQSmqbvtvGFLU5iYqies+SqUiEGNT0UtUPPxcPYgY1BrkXR0Cq2R9HYSimBXN+xHkEN4Hi399W+Ovlg==
 
 debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
@@ -2761,6 +2773,13 @@ node-pre-gyp@*:
     rimraf "^2.6.1"
     semver "^5.3.0"
     tar "^4.4.2"
+
+nodejs-shell@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nodejs-shell/-/nodejs-shell-0.2.0.tgz#4e739d0b3e69f44081a90685aab8f19d0ed04242"
+  integrity sha512-i91izcWiVD8v8PPiZYDjDSMVkAJzwnIN0f1lSe63kw8XdpWCHvi3SltqzVZ77pZ26buLTi82TUqDkH/+isaakQ==
+  dependencies:
+    "@aelesia/commons" "^0.0.3"
 
 nopt@^4.0.1:
   version "4.0.1"

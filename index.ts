@@ -1,21 +1,25 @@
 #!/usr/bin/env node
-import { some_class, some_function } from './src/Something'
-import some_singleton from './src/Something'
+import { Arg } from 'nodejs-shell'
+import { decrypt, decrypt_all, encrypt, encrypt_all } from './src/Crypt'
+import { StringUtil as _ } from '@aelesia/commons'
 ;(async function() {
   try {
-    let command = process.argv[2]
+    let command = Arg.v_first_enum(['encrypt', 'decrypt', 'encrypt_all', 'decrypt_all'])
 
-    if (command === 'some_function') {
-      some_function('1')
-    } else if (command === 'some_class') {
-      new some_class('2').test()
-    } else if (command === 'some_singleton') {
-      some_singleton.test()
+    if (command === 'encrypt') {
+      encrypt()
+    } else if (command === 'decrypt') {
+      decrypt()
+    } else if (command === 'encrypt_all') {
+      encrypt_all()
+    } else if (command === 'decrypt_all') {
+      decrypt_all()
     } else {
       throw Error('InvalidArgumentException')
     }
   } catch (e) {
     console.error((e?.name ?? 'Error') + ': ' + e?.message)
+    console.error(_.lines(e.stack)[1])
     process.exit(1)
   }
 })()
