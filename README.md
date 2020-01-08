@@ -1,42 +1,57 @@
-# Testing
+# Filecrypt
 
-## Link module
-    npm link
+Encrypt and decrypt files with ease so that you can securely check them in to source control.
 
-## Link module from another project
-    npm link <package.json.name>
+Files are encrypted with OpenSSL SHA-256 algorithm.
 
-# npm
+# Basic Usage
 
-## Login / Logout
+## Encrypt
 
-    npm login
-    npm logout
-    
-## Profile
-    
-    npm profile get
-    npm whoami
+Usage: `npx cryptfile encrypt file=<path-to-file> pw=<password>`
 
-## Publishing
+Example: `npx cryptfile encrypt file=./src/Crypt.ts pw=hunter2`
 
-First Publish:
+Output: `./src/Crypt.ts.enc` 
 
-    npm publish --access public
-    
-Subsequent Publishes:
+## Decrypt
 
-    npm publish
+Usage: `npx cryptfile decrypt file=<path-to-file> pw=<password>`
 
-Publish only specific tag:
+Example:
+```
+npx cryptfile decrypt file=./src/Crypt.ts pw=hunter2
+npx cryptfile decrypt file=./src/Crypt.ts.enc pw=hunter2
+```
 
-    npm publish --tag develop
-    
-## Unpublishing
+Output: `./src/Crypt.ts` 
 
-    npm unpublish <package-name> -f
-    npm unpublish <package-name>@<version>
+# Configuration File
 
-## CI
+## .filecrypt.cfg
 
-https://stackoverflow.com/questions/54665511/how-do-i-publish-a-private-npm-package-with-gitlab-ci
+```
+<path-to-file-#1>
+<path-to-file-#2>
+<path-to-file-#3>
+```
+
+Example:
+
+```
+package.json
+package.lock.json
+src/Crypt.ts
+```
+
+## Encrypt from .cryptfile.cfg
+
+Usage: `npx cryptfile encrypt cfg=<path-to-cryptfile.cfg> pw=<password≥`
+
+Example: ```npx encrypt cryptfile cfg=.cryptfile.cfg pw=hunter2```
+
+## Decrypt from .cryptfile.cfg
+
+Usage: `npx cryptfile decrypt cfg=<path-to-cryptfile.cfg> pw=<password≥`
+
+Example: `npx decrypt cryptfile cfg=.cryptfile.cfg pw=hunter2`

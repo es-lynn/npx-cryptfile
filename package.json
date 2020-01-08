@@ -1,19 +1,22 @@
 {
-  "name": "@aelesia/npx-template",
-  "version": "0.0.1",
-  "description": "Template for NPX packages",
+  "name": "cryptfile",
+  "version": "0.0.0",
+  "description": "Encrypt / Decrypts files using SHA-256",
   "author": "aelesia",
   "license": "MIT",
-  "repository": "https://github.com/aelesia/npx-template",
+  "repository": "https://github.com/aelesia/npx-cryptfile",
   "bin": "dist/index.js",
   "scripts": {
     "prepublish": "tsc --incremental false",
-    "compile": "tsc --noEmit && eslint src/**/*.ts tests/**/*.ts index.ts",
+    "compile": "tsc --noEmit && eslint . --ext .ts --fix",
     "test": "jest",
     "test_coverage": "jest --collectCoverage",
-    "lint": "eslint src/**/*.ts tests/**/*.ts index.ts --fix"
+		"lint": "eslint . --ext .ts --fix"
   },
-  "dependencies": {},
+  "dependencies": {
+		"@aelesia/commons": "^0.0.3",
+		"nodejs-shell": "^0.3.2"
+	},
   "devDependencies": {
     "@types/node": "^13.1.4",
     "@types/jest": "^24.0.23",
