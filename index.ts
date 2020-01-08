@@ -2,7 +2,7 @@
 import { Arg } from 'nodejs-shell'
 import { decrypt, decrypt_all, encrypt, encrypt_all } from './src/Crypt'
 import { StringUtil as _ } from '@aelesia/commons'
-;(async function() {
+;(async function(): Promise<void> {
   try {
     let command = Arg.v_first_enum(['encrypt', 'decrypt', 'encrypt_all', 'decrypt_all'])
 

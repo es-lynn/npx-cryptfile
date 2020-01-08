@@ -8,14 +8,15 @@
   "bin": "dist/index.js",
   "scripts": {
     "prepublish": "tsc --incremental false",
-    "compile": "tsc --noEmit && eslint src/**/*.ts tests/**/*.ts index.ts",
+    "compile": "tsc --noEmit && eslint . --ext .ts --fix",
     "test": "jest",
     "test_coverage": "jest --collectCoverage",
-    "lint": "eslint src/**/*.ts tests/**/*.ts index.ts --fix"
+		"lint": "eslint . --ext .ts --fix"
   },
   "dependencies": {
-    "nodejs-shell": "^0.2.0"
-  },
+		"@aelesia/commons": "^0.0.3",
+		"nodejs-shell": "^0.3.2"
+	},
   "devDependencies": {
     "@types/node": "^13.1.4",
     "@types/jest": "^24.0.23",
