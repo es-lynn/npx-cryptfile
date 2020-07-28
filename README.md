@@ -2,7 +2,7 @@
 
 Encrypt and decrypt files with ease so that you can securely check them in to source control.
 
-Files are encrypted with OpenSSL SHA-256 algorithm.
+Files are encrypted with OpenSSL AES-256 algorithm.
 
 # Basic Usage
 
